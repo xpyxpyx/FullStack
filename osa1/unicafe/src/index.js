@@ -5,14 +5,18 @@ const History = (props) => {
     if (props.allClicks.length === 0) {
         return (
             <div>
-                No feedback given
-        </div>
+                <p>
+                    No feedback given
+                </p>
+            </div>
         )
     }
 
     return (
         <div>
-            Feedback given
+            <p>
+                Feedback given
+            </p>
         </div>
     )
 }
@@ -30,12 +34,12 @@ const Statistics = (props) => {
     return (
         <table>
             <tbody>
-                <StatisticLine text="good" value={props.neutral} />
+                <StatisticLine text="good" value={props.good} />
                 <StatisticLine text="neutral" value={props.neutral} />
                 <StatisticLine text="bad" value={props.bad} />
                 <StatisticLine text="all" value={props.all} />
                 <StatisticLine text="average" value={props.value / props.all} />
-                <StatisticLine text="positive" value={((props.good / props.all)*100) + " %"} />
+                <StatisticLine text="positive" value={((props.good / props.all) * 100) + " %"} />
             </tbody>
         </table >
     )
